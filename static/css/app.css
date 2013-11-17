@@ -1,0 +1,139 @@
+body, html {
+  background-color:#f8f8f8;
+  padding-bottom:20px;
+}
+
+/* HEADER */
+
+.navbar.header {
+  border-radius:0;
+  text-transform:uppercase;
+}
+
+.navbar {
+  margin:0;
+}
+
+.nav>li>a {
+  background-color:inherit!important;
+  color:#ccc;
+  padding-top:13px;
+}
+
+/* INTRO */
+
+.title {
+  left:-10000px;
+  position:relative;
+}
+
+.logo {
+  width:90%;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.byline {
+  text-transform:uppercase;
+  text-align:center;
+  color:rgba(255, 255, 255, 0.15);
+  font-size:40px;
+}
+
+#player {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+.movie {
+  background-image:url('/assets/images/paddling.jpg');
+  background-position:center cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position:relative;
+  min-height:400px;
+  height:auto;
+  background-repeat: no-repeat; 
+}
+
+/* adds opacity the the background-image */
+.overlay {
+  background-color:rgba(50, 50, 50, 0.4);
+  color: #eee;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:100%;
+}
+
+.watch-now-wrapper {
+  margin-top:120px;
+  text-align:center;
+}
+
+.watch-now-button {
+  padding:25px;
+}
+
+.watch-now {
+  margin:0;
+  color:#ddd;
+  text-transform:uppercase;
+}
+
+/* BODY */
+
+.carousel-control { 
+  /* kill boostraps carousel backgroun */
+  background:inherit !important;
+}
+
+.heading {
+  margin-top:60px;
+  margin-bottom:20px;
+  text-transform:uppercase;
+  text-align:center;
+  font-size:33px;
+  color:#ac0818;
+  padding-bottom:10px;
+}
+
+.footer {
+  margin-top:50px;
+  text-align:center;
+  font-size:14px;
+}
+
+.break {
+  margin-top:60px;
+}
+
+a, a:hover {
+  color: #d2322d;
+}
+
+.main {
+   font: normal 20px/32px Baskerville,Georgia,"Times New Roman",Times,serif;
+ }
+
+.main p {
+  margin-top:10px;
+}
+
+.first-words {
+  font-size:122%;
+  text-transform:uppercase;
+}
+
+td {
+  border:0 !important;
+}
+
+.map {
+  width:100%;
+}
