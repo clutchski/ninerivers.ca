@@ -124,22 +124,82 @@ title:
       </div>
     </div>
 
-    <!-- journey -->
+    <!-- crew -->
+    <div id="crew" class="row break">
+      <div class="col-md-offset-2 col-md-8">
+        <p><span class="first-words">The crew</span>.</p>
+        <% crew_data = [
+        {
+            :name => 'Adam Biehler',
+            :img  => 'assets/images/crew/adam.jpg',
+            :bio  => 'is a Montreal based photographer and videographer
+                     whose work has been published in The Walrus and on the
+                     CBC. Nine Rivers was his first canoe trip.'
+        },
+        {
+            :name => 'Matt Perpick',
+            :img  => '/assets/images/crew/matt.jpg',
+            :site => 'http://shiningtree.tumblr.com',
+            :bio  => 'is Brooklyn based paddler, videographer and tech nerd, 
+                      silently plotting his return to Canada.
+                      His past canoe expeditions include the Seal, Moisie and
+                      Albany Rivers.'
+
+        },
+        {
+            :name => 'Dave Hartman',
+            :img  => '/assets/images/crew/dave.jpg',
+            :site => 'http://www.hayfiremedia.com',
+            :bio  => 'is a BC based videographer and adventurer, who is as
+                      comfortable ripping down the Rockies on skis as he is
+                      upside down in huge whitewater.
+                      His past expeditions include the Missinaibi and Winisk
+                      Rivers.
+                     ' 
+        },
+        {
+            :name => "Ryan 'Turbo' Forsyth",
+            :img  => '/assets/images/crew/turbo.jpg',
+            :bio  => 'is a paddler and adventurer, whose many expeditions
+            include the Winisk, Seal, Moisie and Albany Rivers. His winters are
+            spent poring over the journals of long dead fur traders
+            and teaching in Northern Ontario.'
+        }
+        ] %>
+        <% crew_data.each do |crew| %>
+        <div class="media crew-bio">
+            <a class="pull-left" href="<%= crew[:img] %>">
+               <img class="media-object img-rounded"
+               src="<%= crew[:img] %>" alt="<%= crew[:alt] %>">
+            </a>
+            <div class="media-body">
+              <strong><%= crew[:name] %> </strong> <%= crew[:bio] %>
+              <% if crew[:site] %>
+              <a class="crew-bio-link" href="<%= crew[:site] %>"> [more]</a>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- events -->
     <div class="row break">
       <div class="col-md-offset-2 col-md-8">
-        <p id="crew"><span class="first-words">The crew</span>.</p>
-        <br/>
-        <div class="media">
-          <a class="pull-left" href="/assets/images/crew/adam.jpg">
-             <img class="media-object img-rounded"
-                    src="/assets/images/crew/adam.jpg" alt="Adam Biehler"
-                   style="width:150px">
-          </a>
-          <div class="media-body">
-            <strong>Adam Biehler</strong> is a Montreal based photographer and video maker. His work
-            includes 
-          </div>
-        </div>
+        <span id="events" class="first-words">Screenings</span> of Nine Rivers are
+        happening over the next months. Come and join us.
+        <br/><br/>
+
+        <table class="table event-list">
+          <tbody>
+            <tr>
+              <td>November 29, 2013</td>
+              <td>Toronto, ON</td>
+              <td>Camera Bar</td>
+              <td>7:00 pm</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -158,35 +218,6 @@ title:
       </div>
     </div>
 
-    <!-- events -->
-    <div class="row break">
-      <div class="col-md-offset-2 col-md-8">
-        <span id="events" class="first-words">Screenings</span> of Nine Rivers are
-        happening over the next months. Come and join us.
-        <br/><br/>
-
-        <table class="table event-list">
-          <!--
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>City</th>
-              <th>Venue</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          -->
-          <tbody>
-            <tr>
-              <td>November 29, 2013</td>
-              <td>Toronto, ON</td>
-              <td>Camera Bar</td>
-              <td>7:00 pm</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
 
     <div class="row break">
       <div class="col-md-offset-2 col-md-8">

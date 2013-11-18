@@ -113,6 +113,12 @@ body, html {
   margin-top:60px;
 }
 
+.event-list {
+  font-size:16px;
+  line-height:22px;
+}
+
+
 a, a:hover {
   color: #d2322d;
 }
@@ -136,4 +142,25 @@ td {
 
 .map {
   width:100%;
+}
+
+.crew-bio {
+  font-size:17px;
+  line-height:22px;
+  margin-top:25px;
+}
+
+.crew-bio strong {
+  text-transform:uppercase;
+  font-weight:normal;
+  font-size:19px;
+}
+
+.crew-bio img {
+  width:100px;
+  height:100px;
+}
+
+.crew-bio-link {
+  font-size:13px;
 }
