@@ -5,12 +5,16 @@ GEM
     cri (2.4.1)
       colored (>= 1.2)
     maruku (0.7.0)
+    mime-types (1.23)
     nanoc (3.6.6)
       cri (~> 2.3)
+    rack (1.5.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   maruku
+  mime-types
   nanoc (= 3.6.6)
+  rack
