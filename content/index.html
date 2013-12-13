@@ -1,6 +1,10 @@
 ---
 title:
 ---
+<% 
+  vimeo_id = '81773747'
+  vimeo_player_url = "https://vimeo.com/#{vimeo_id}"
+%>
   <nav class="navbar navbar-default navbar-inverse header" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -43,16 +47,11 @@ title:
 
         <div class="row">
           <div class="watch-now-wrapper">
-            <button type="button" class="btn btn-danger watch-now-button">
-              <h3 class="watch-now">Coming Soon</h3>
-              <!--
-              <a class="watch-now" href="http://vimeo.com">
+            <a href="<%= vimeo_player_url %>" type="button" class="btn btn-danger watch-now-button">
                 <h3 class="watch-now">Watch the Film
                   <span class="glyphicon glyphicon-play"></span>
                 </h3>
               </a>
-              -->
-            </button>
           </div>
         </div>
       </div>
@@ -224,7 +223,6 @@ title:
       </div>
     </div>
 
-
     <div class="row break">
       <div class="col-md-offset-2 col-md-8">
         <p id="contact" class="text-center"><a
@@ -239,9 +237,22 @@ title:
         <small>Fortune favours the bold. Copyright 2013.</small>
       </div>
     </div>
-
-
   </div> <!-- container -->
+
+  <!-- player modal -->
+  <div class="modal fade" id="player-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+             <span class="glyphicon glyphicon-remove"
+               style="color:#fff"></span>
+          </button>
+        </div>
+        <div class="modal-body"></div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -251,6 +262,7 @@ title:
     $(function () {
       $('.carousel').carousel({interval:5000});
 
+      // resize the header
       var $movie = $('.movie');
       var $header = $('.navbar-header');
       var $window = $(window);
@@ -259,7 +271,38 @@ title:
       };
       resizeBackground();
       $window.resize(resizeBackground);
+
+      // play the movie.
+      var playerModal = $('#player-modal');
+      var playerModalBody = playerModal.find('.modal-body');
+      playerModal.on('hide.bs.modal', function() {
+        playerModalBody.empty();
+      }); 
+    $('.modal-backdrop').on('click', function (event) {
+      1/0;
+      playerModal.model('hide'); 
+    });
+
+      var generateIframe = function () {
+        return $('<iframe></iframe>').attr({
+          'webkitallowfullscreen':'',
+          'mozallowfullscreen':'',
+          'allowfullscreen':'',
+          'src':'//player.vimeo.com/video/<%= vimeo_id%>?portrait=0&title=0&autoplay=1',
+          'frameborder':'0',
+          'width':1280,
+          'height':720
+        });
+      };
+
+      $('.watch-now-button').click(function (event) {
+        var iframe = generateIframe();
+        playerModalBody.append(iframe);
+        playerModal.modal().fitVids();
+        // if we're gotten this far, the player shuld be popped up. 
+        event.preventDefault();
       });
+    });
   </script>
 <%end%>
 
