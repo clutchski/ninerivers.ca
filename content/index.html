@@ -1,7 +1,7 @@
 ---
 title:
 ---
-<% 
+<%
   vimeo_id = '81720564'
   vimeo_player_url = "https://vimeo.com/#{vimeo_id}"
 %>
@@ -277,11 +277,10 @@ title:
       var playerModalBody = playerModal.find('.modal-body');
       playerModal.on('hide.bs.modal', function() {
         playerModalBody.empty();
-      }); 
-    $('.modal-backdrop').on('click', function (event) {
-      1/0;
-      playerModal.model('hide'); 
-    });
+      });
+      $('.modal-backdrop').on('click', function (event) {
+        playerModal.model('hide');
+      });
 
       var generateIframe = function () {
         return $('<iframe></iframe>').attr({
@@ -299,7 +298,7 @@ title:
         var iframe = generateIframe();
         playerModalBody.append(iframe);
         playerModal.modal().fitVids();
-        // if we're gotten this far, the player shuld be popped up. 
+        // if we're gotten this far, the player shuld be popped up.
         event.preventDefault();
       });
     });
